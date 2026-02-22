@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Pentru Ioana ❤️✨</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    /* Mov extrem de închis - Deep Night Purple (94% darkness) */
+    background-color: #0d0216; 
+    background-image: radial-gradient(circle at center, #16042a 0%, #0d0216 100%);
+    font-family: "Georgia", serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    color: #ffffff;
+}
+
+/* Efectul de nebuloasă mov/roz din partea de jos a imaginii tale */
+.nebula {
+    position: fixed;
+    bottom: -10%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: radial-gradient(ellipse at bottom, rgba(106, 13, 173, 0.3) 0%, rgba(13, 2, 22, 0) 70%);
+    filter: blur(50px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Stele sclipitoare */
+.star {
+    position: fixed;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: 0;
+    animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.1; transform: scale(0.8); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+#container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 100px 25px;
+    font-size: 26px;
+    line-height: 1.8;
+    text-align: center;
+    white-space: pre-wrap;
+    margin: 0 auto;
+}
+
+#text span {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+/* Bara de derulare asortată */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0d0216; }
+::-webkit-scrollbar-thumb { background: #4b0082; border-radius: 10px; }
+</style>
+</head>
+<body>
+
+<div class="nebula"></div>
+
+<div id="container">
+    <div id="text"></div>
+</div>
+
+<script>
+// Generăm stelele pe cerul închis
+function createStars() {
+    const starCount = 120;
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        const size = Math.random() * 2.5;
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.setProperty('--duration', (Math.random() * 3 + 2) + "s");
+        document.body.appendChild(star);
+    }
+}
+createStars();
+
+const lines = [
+"Iubirea mea… 💖✨🌸🥰",
+"Poate că totul a început de doar două zile… dar pentru mine parcă au trecut luni întregi de când vorbim. 🌙💭💛",
+"Știu că sună ciudat, știu că poate pare prea repede, dar ce simt eu nu are nicio legătură cu timpul. ⏳💌✨",
+"Are legătură cu tine. Cu felul tău de a fi. Cu liniștea pe care mi-o dai fără să faci nimic special. 🫂💖💛",
+"De când ai apărut în viața mea, parcă s-a schimbat ceva în mine. 🌟💖✨",
+"Mă trezesc dimineața și primul gând e la tine. ☀️💭💛",
+"Nu credeam că pot să mă atașez așa de repede de cineva. ❤️‍🔥💌",
+"Dar cu tine nu a fost o alegere. A fost ceva natural. Inima mea te-a recunoscut înainte să înțeleg eu ce se întâmplă. 🫂💖✨",
+"Și știi ce îmi place cel mai mult? 🌹💛💞",
+"Că nu simt că trebuie să mă prefac. Cu tine sunt eu, exact așa cum sunt. 🌟💌💖",
+"Faptul că deja vorbim despre momentul în care o să vii aici, lângă mine, în Anglia… mă face să am emoții reale. 🤗💞✨",
+"Îmi imaginez cum o să fie când o să te văd prima dată. 🫂💖💛",
+"Nu vreau să fie doar o vizită. Vreau să fie începutul amintirilor noastre. 🌆💞✨",
+"Prima plimbare împreună. Prima dată când râdem unul lângă altul fără motiv. 😄☀️💖",
+"Prima cafea băută dimineața, încă somnoroși. ☕💛💌",
+"Primele momente în care o să ne uităm unul la altul și o să realizăm că nu mai suntem doar două persoane care vorbesc… ci două persoane care trăiesc ceva împreună. 🫂💖🌸",
+"Poate că pare devreme să spun toate astea. Dar eu nu vreau să mă ascund după frică sau după «ce zice lumea». 🌸💌✨",
+"Simt că vreau să construiesc ceva cu tine. Pas cu pas. Fără grabă. Dar împreună. 🛤️💖💛",
+"Nu îți promit basme. Nu îți promit că o să fie totul perfect. ❌💫💌",
+"Îți promit că o să fiu sincer. Îți promit că o să fiu lângă tine. Îți promit că o să lupt pentru noi atunci când va fi greu. 🤝💛💞",
+"Pentru că iubirea adevărată nu înseamnă doar emoții frumoase. Înseamnă răbdare. Înseamnă grijă. 💖🌹✨",
+"Iar eu… te aleg pe tine. 💌💛🥰",
+"Știi ce e ciudat? Deși încă nu ne-am ținut de mână în realitate, simt că deja există o legătură între noi. 📱💖✨",
+"O legătură care nu ține de distanță, de kilometri sau de timp. Ține de felul în care ne înțelegem. 🫂💛💞",
+"Mi-ai adus o stare pe care nu o pot explica. Nu e doar bucurie. E calm, siguranță. 🌸💖",
+"Abia aștept ziua în care nu o să mai trebuiască să îți scriu că mi-e dor… 🌙💞💌",
+"Abia aștept să nu mai existe «noapte bună» spus la telefon, ci spus în șoaptă, înainte să adormim. 💤💛💖",
+"Vreau să descoperim lucruri împreună. Să ne certăm uneori și apoi să ne împăcăm râzând. 🏡💛💌✨",
+"Poate că povestea noastră a început neașteptat. 🌌💖💞",
+"Dar uneori cele mai frumoase lucruri din viață nu sunt cele pe care le planifici… sunt cele care pur și simplu se întâmplă. 🌸💛✨",
+"Și dacă peste ani o să ne amintim de zilele astea, vreau să putem spune că am avut curaj. 🌱💖💞",
+"Până atunci, să știi că aici e cineva care se gândește la tine mai des decât crezi. ❤️💌✨",
+"Ai grijă de tine… pentru că pentru mine contezi enorm. 💖🌸💛",
+"Și la final… vreau să știi că fiecare zi alături de tine va fi ca un vis frumos care nu se termină niciodată. 🌟💞💌",
+"Tu ești lumina mea, motivul meu de zâmbet și cea mai frumoasă parte din viața mea. 🥰💖✨",
+"💌🌹 Din partea mea pentru tine, iubirea mea, cu tot sufletul meu… 🫂💛💖🌸💫❤️"
+];
+
+const colors = ["#ff99cc", "#a2d2ff", "#fcf4a3", "#e0b0ff", "#b2fba5", "#ffcc99", "#ccccff", "#ffb3ba", "#baffc9", "#ffffba"];
+
+let lineIndex = 0;
+const textContainer = document.getElementById("text");
+
+function typeLine() {
+    if(lineIndex >= lines.length) return;
+    const line = lines[lineIndex];
+    const color = colors[lineIndex % colors.length];
+    let charIndex = 0;
+    const span = document.createElement("span");
+    span.style.color = color;
+    textContainer.appendChild(span);
+
+    function typeChar() {
+        if(charIndex < line.length){
+            span.innerHTML += line.charAt(charIndex);
+            charIndex++;
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+            setTimeout(typeChar, 45);
+        } else {
+            span.innerHTML += "\n\n";
+            lineIndex++;
+            setTimeout(typeLine, 1000);
+        }
+    }
+    typeChar();
+}
+
+setTimeout(typeLine, 1500);
+</script>
+</body>
+  </html>
+  
